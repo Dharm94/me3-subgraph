@@ -15,7 +15,7 @@ dataSources:
       abi: EnsRegistry
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.3
+      apiVersion: 0.0.5
       language: wasm/assemblyscript
       file: ./src/ensRegistry.ts
       entities:
@@ -24,7 +24,7 @@ dataSources:
         - Resolver
       abis:
         - name: EnsRegistry
-          file: ../build/contracts/EnsRegistry.json
+          file: ../build/contracts/ENSRegistry.json
       eventHandlers:
         - event: 'Transfer(indexed bytes32,address)'
           handler: handleTransfer
@@ -42,7 +42,7 @@ dataSources:
       abi: Resolver
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.3
+      apiVersion: 0.0.5
       language: wasm/assemblyscript
       file: ./src/resolver.ts
       entities:
@@ -92,7 +92,7 @@ dataSources:
       abi: BaseRegistrar
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.3
+      apiVersion: 0.0.5
       language: wasm/assemblyscript
       file: ./src/ethRegistrar.ts
       entities:
@@ -116,14 +116,14 @@ dataSources:
       abi: EthRegistrarController
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.3
+      apiVersion: 0.0.5
       language: wasm/assemblyscript
       file: ./src/ethRegistrar.ts
       entities:
         - Registration
       abis:
         - name: EthRegistrarController
-          file: ../build/contracts/EthRegistrarController.json
+          file: ../build/contracts/ETHRegistrarController.json
       eventHandlers:
         - event: 'NameRegistered(string,indexed bytes32,indexed address,uint256)'
           handler: handleNameRegisteredByController
