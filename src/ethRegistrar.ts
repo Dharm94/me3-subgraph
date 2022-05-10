@@ -53,7 +53,7 @@ export function handleNameRegisteredByController(event: ControllerNameRegistered
   let domain = new Domain(crypto.keccak256(concat(rootNode, event.params.label)).toHex())
   if(domain.labelName !== event.params.name) {
     domain.labelName = event.params.name
-    domain.name = event.params.name + '.forever'
+    domain.name = event.params.name + '.me3'
     domain.save()
   }
 
@@ -70,7 +70,7 @@ export function handleNameTransferred(event: TransferEvent): void {
 
   let label = uint256ToByteArray(event.params.tokenId)
   let registration = Registration.load(label.toHex())
-  if(registration == null) return;
+  if(!registration) return;
 
   registration.registrant = account.id
   registration.save()
